@@ -260,92 +260,126 @@ public class RubiksCube {
     }
 
     private void printVerticalFace(Face face){
-        int k;
-        switch (face){
-            case FRONT:
-                k = ZERO;
-                break;
-            case BACK:
-                k = TWO;
-                break;
-            default:
-                k = -1;
+        if (face == Face.FRONT){
+            printFrontFace();
         }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                printPiece(face, cube[i][j][k]);
-            }
-            System.out.println();
+        else{
+            printBackFace();
         }
     }
 
     private void printCapFace(Face face){
-        int j;
-        switch (face){
-            case TOP:
-                j = ZERO;
-                break;
-            case BOTTOM:
-                j = TWO;
-                break;
-            default:
-                j = -1;
+        if(face == Face.TOP){
+            //printTopFace();
         }
-        for (int i = 0; i < 3; i++) {
-            for (int k = 0; k < 3; k++) {
-                printPiece(face, cube[i][j][k]);
-
-            }
-            System.out.println();
+        else {
+            printBottomFace();
         }
 
     }
 
     private void printSideFace(Face face){
-        int i;
-        switch (face){
-            case LEFT:
-                i = ZERO;
-                break;
-            case RIGHT:
-                i = TWO;
-                break;
-            default:
-                i = -1;
+        if (face == Face.LEFT){
+           // printLeftFace();
         }
-        for (int j = 0; j < 3; j++) {
-            for (int k = 0; k < 3; k++) {
-                printPiece(face, cube[i][j][k]);
+        else {
+          //  printRightFace();
+        }
+    }
+
+
+
+    private void printLeftTopRight(){
+        for (int k = 2; k >= 0; k--) {
+            for (int j = 2; j >= 0; j--) {
+                printPiece(Face.LEFT, cube[ZERO][j][k]);
+
+            }
+            for (int i = 0; i < 3; i++) {
+                printPiece(Face.TOP, cube[i][ZERO][k]);
+            }
+            for (int j = 0; j < 3; j++) {
+                printPiece(Face.RIGHT, cube[TWO][j][k]);
+
+            }
+            System.out.println();
+
+        }
+    }
+
+    private void printBottomFace(){
+        int j = TWO;
+        for (int k = 0; k < 3; k++) {
+            System.out.print("      ");
+            for (int i = 0; i < 3; i++) {
+                printPiece(Face.BOTTOM, cube[i][j][k]);
             }
             System.out.println();
         }
     }
 
+    private void printBackFace(){
+        int k = TWO;
+        for (int j = 2; j >= 0 ; j--) {
+            System.out.print("      ");
+
+            for (int i = 0; i < 3; i++) {
+                printPiece(Face.BACK, cube[i][j][k]);
+            }
+            System.out.println();
+        }
+    }
+
+    private void printFrontFace(){
+        int k = ZERO;
+        for (int j = 0; j < 3; j++) {
+            System.out.print("      ");
+
+            for (int i = 0; i < 3; i++) {
+                printPiece(Face.FRONT, cube[i][j][k]);
+            }
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
     public void showCube(){
-        System.out.println("Front");
-        //print front face
-        printVerticalFace(Face.FRONT);
 
-        System.out.println("Right");
-        printSideFace(Face.RIGHT);
-        //print right face
+        printBottomFace();
+        printBackFace();
+        printLeftTopRight();
+        printFrontFace();
 
-        System.out.println("Back");
-        printVerticalFace(Face.BACK);
 
-        //print back face
 
-        System.out.println("Left");
-        printSideFace(Face.LEFT);
-        //print left face
-
-        System.out.println("Top");
-        //print top face
-        printCapFace(Face.TOP);
-
-        System.out.println("Bottom");
-        printCapFace(Face.BOTTOM);
-        //print bottom face
+//        System.out.println("Front");
+//        //print front face
+//        printVerticalFace(Face.FRONT);
+//
+//        System.out.println("Right");
+//        printSideFace(Face.RIGHT);
+//        //print right face
+//
+//        System.out.println("Back");
+//        printVerticalFace(Face.BACK);
+//
+//        //print back face
+//
+//        System.out.println("Left");
+//        printSideFace(Face.LEFT);
+//        //print left face
+//
+//        System.out.println("Top");
+//        //print top face
+//        printCapFace(Face.TOP);
+//
+//        System.out.println("Bottom");
+//        printCapFace(Face.BOTTOM);
+//        //print bottom face
     }
 
     public void rotateFace(Face face, Direction direction){
