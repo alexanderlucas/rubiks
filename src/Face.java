@@ -13,13 +13,9 @@ public enum Face {
     BACK(FaceClass.VERTICAL);
 
     private final FaceClass faceClass;
-//    private final Face left;
-//    private final Face right;
 
     Face(FaceClass faceClass) {
         this.faceClass = faceClass;
-//        this.left = left;
-//        this.right = right;
     }
 
     public FaceClass getFaceClass() {
