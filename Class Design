@@ -1,0 +1,111 @@
+Assignment 11 — Design Document
+
+interface Piece
+
+	HashMap(Color:Face)//same keys, changing values
+
+	getColors
+	getColorForFace(Face face)
+	setFace(Color) //sets the face values (esp. after rotation)
+
+
+Each extension of Piece
+class CornerPiece extends Piece
+colors = [3]
+faces = [3]
+
+
+class EdgePiece extends Piece
+colors = [2]
+face = [2]
+
+
+class CenterPiece extends Piece
+colors = [1]
+faces = [1]
+
+
+class RubiksCube
+The highest level, made up of 26 pieces
+
+enum Direction with values
+	CLOCKWISE
+	COUNTERCLOCKWISE
+
+enum Color with values
+	RED
+	GREEN
+	YELLOW
+	BLUE
+	WHITE
+	ORANGE
+
+The cube can be seen as remaining stationary with set Face values which have set neighbors.
+enum Face with values. ////////face class, constant index
+	FRONT
+	BACK
+	LEFT
+	RIGHT
+	TOP
+	BOTTOM
+
+Array of Pieces[3][3][3]
+	Wherein each face is represented with the following 3x3 arrays.
+	Front =  [0-2] [0-2]  [0]
+	Back =   [0-2] [0-2]  [2]
+	Left =    [0]  [0-2] [0-2]
+	Right =   [2]  [0-2] [0-2]
+	Top =    [0-2]  [0]  [0-2]
+	Bottom = [0-2]  [2]  [0-2]
+
+
+newCube
+	8 new corner pieces
+	12 new edge pieces
+	6 new center pieces
+	initialized with their colors and faces
+
+Returns the 3D array representation of the cube
+getCube -> Piece[][][]
+
+Prints out a representation of each of the cube's faces
+showCube
+
+For each of 6 faces, there are two directions they can be rotated. The following shows the 3D transformation for pieces for each kind of rotation.
+rotateFace(Face, Direction)
+	CW Front
+	[i][j][0] -> [j][2-i][0]
+	CCW Front
+	[i][j][0] -> [2-j][i][0]
+
+	CW Back
+	[i][j][2] -> [j][2-i][2]
+	CCW Back
+	[i][j][2] -> [2-j][i][2]
+
+	CW Top
+	[i][0][k] -> [k][0][2-i]
+	CCW Top
+	[i][0][k] -> [2-k][2][i]
+
+	CW Bottom
+	[i][2][k] -> [k][0][2-i]
+	CCW Bottom
+	[i][2][k] -> [2-k][2][i]
+
+	CW Left
+	[0][j][k] -> [0][2-k][j]
+	CCW Left
+	[0][j][k] -> [0][k][2-j]
+
+	CW Right
+	[2][j][k] -> [2][2-k][j]
+	CCW Left
+	[2][j][k] -> [2][k][2-j]
+
+	setFace for each Piece color
+
+Returns the 4 Faces that are affected by the rotation of the given face.
+getNeighbors(Face face) -> [Face]
+
+
