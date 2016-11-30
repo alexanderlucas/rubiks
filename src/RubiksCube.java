@@ -13,9 +13,6 @@ public class RubiksCube {
     Piece[][][] cube = new Piece[3][3][3];
 
     public RubiksCube(){
-        //make center pieces
-        //make corner pieces
-        //make edge pieces
 
         initializeCenterPieces();
         initializeCornerPieces();
@@ -253,25 +250,72 @@ public class RubiksCube {
 
     }
 
+    private void printPiece(Face face, Piece piece) {
+        //get color for the face of the piece
+        Color color = piece.getColorForFace(face);
+        //get the char of that color
+        char c = color.getCharacter();
+        //print that char
+        System.out.print(c + " ");
+    }
+
     private void printVerticalFace(Face face){
         int k;
         switch (face){
             case FRONT:
                 k = ZERO;
+                break;
             case BACK:
                 k = TWO;
+                break;
             default:
                 k = -1;
         }
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                Piece piece = cube[i][j][k];
-                //get color for the face of the piece
-                Color color = piece.getColorForFace(face);
-                //get the char of that color
-                char c = color.getCharacter();
-                //print that char
-                System.out.print(c + " ");
+                printPiece(face, cube[i][j][k]);
+            }
+            System.out.println();
+        }
+    }
+
+    private void printCapFace(Face face){
+        int j;
+        switch (face){
+            case TOP:
+                j = ZERO;
+                break;
+            case BOTTOM:
+                j = TWO;
+                break;
+            default:
+                j = -1;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int k = 0; k < 3; k++) {
+                printPiece(face, cube[i][j][k]);
+
+            }
+            System.out.println();
+        }
+
+    }
+
+    private void printSideFace(Face face){
+        int i;
+        switch (face){
+            case LEFT:
+                i = ZERO;
+                break;
+            case RIGHT:
+                i = TWO;
+                break;
+            default:
+                i = -1;
+        }
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                printPiece(face, cube[i][j][k]);
             }
             System.out.println();
         }
@@ -283,20 +327,66 @@ public class RubiksCube {
         printVerticalFace(Face.FRONT);
 
         System.out.println("Right");
+        printSideFace(Face.RIGHT);
         //print right face
 
         System.out.println("Back");
+        printVerticalFace(Face.BACK);
+
         //print back face
 
         System.out.println("Left");
+        printSideFace(Face.LEFT);
         //print left face
 
         System.out.println("Top");
         //print top face
+        printCapFace(Face.TOP);
 
         System.out.println("Bottom");
+        printCapFace(Face.BOTTOM);
         //print bottom face
     }
 
+    public void rotateFace(Face face, Direction direction){
+        switch (face.getFaceClass()){
+            case CAP:
+                rotateCapFace(face, direction);
+                break;
+            case VERTICAL:
+                rotateVerticalFace(face, direction);
+                break;
+            case SIDE:
+                rotateSideFace(face, direction);
+                break;
+        }
+    }
+
+    private void rotateCapFace(Face face, Direction direction){
+        int k;
+        if(face == Face.TOP){
+            k = ZERO;
+        }
+        else {
+            k = TWO;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                //if CW
+                //cube[j][2-i][k] = oldcube[i][j][k]
+                //else
+                //cube[2-j][i][k] = oldcube[i][j][k]
+
+            }
+        }
+    }
+
+    private void rotateVerticalFace(Face face, Direction direction){
+
+    }
+
+    private void rotateSideFace(Face face, Direction direction){
+
+    }
 
 }

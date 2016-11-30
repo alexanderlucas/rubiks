@@ -20,7 +20,7 @@ public class CornerPiece implements Piece {
 
     @Override
     public Color getColorForFace(Face face) {
-        return null;
+        return colors.get(faces.indexOf(face));
     }
 
     @Override
