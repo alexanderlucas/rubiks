@@ -8,6 +8,10 @@ public class CornerPiece implements Piece {
     ArrayList<Color> colors = new ArrayList<>();
     ArrayList<Face> faces = new ArrayList<>();
 
+    public CornerPiece(ArrayList<Color> colors, ArrayList<Face> faces){
+        this.colors = colors;
+        this.faces = faces;
+    }
 
     @Override
     public HashSet<Color> getColors() {

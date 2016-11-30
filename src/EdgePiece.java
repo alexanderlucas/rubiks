@@ -6,10 +6,13 @@ import java.util.HashSet;
  */
 public class EdgePiece implements Piece {
 
-    ArrayList<Color> colors = new ArrayList<>();
-    ArrayList<Face> faces = new ArrayList<>();
+    private ArrayList<Color> colors = new ArrayList<>();
+    private ArrayList<Face> faces = new ArrayList<>();
 
-    public EdgePiece(ArrayList)
+    public EdgePiece(ArrayList<Color> colors, ArrayList<Face> faces){
+        this.colors = colors;
+        this.faces = faces;
+    }
 
     @Override
     public HashSet<Color> getColors() {

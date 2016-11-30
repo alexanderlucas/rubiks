@@ -1,3 +1,7 @@
+import com.sun.xml.internal.ws.addressing.WsaTubeHelperImpl;
+
+import java.util.ArrayList;
+
 /**
  * Created by alexlucas on 29/11/2016.
  */
@@ -13,6 +17,10 @@ public class RubiksCube {
         //make corner pieces
         //make edge pieces
 
+        initializeCenterPieces();
+        initializeCornerPieces();
+        initializeEdgePieces();
+
     }
 
     private void initializeCenterPieces(){
@@ -24,39 +32,271 @@ public class RubiksCube {
         cube[ONE][TWO][ONE] = new CenterPiece(Color.ORANGE, Face.BOTTOM);
     }
 
+    private void initializeCornerPieces(){
+        ArrayList<Color> colors = new ArrayList<>();
+        ArrayList<Face> faces = new ArrayList<>();
+
+        //front top left
+        colors.add(Color.RED);
+        colors.add(Color.YELLOW);
+        colors.add(Color.WHITE);
+
+        faces.add(Face.FRONT);
+        faces.add(Face.TOP);
+        faces.add(Face.LEFT);
+
+        cube[ZERO][ZERO][ZERO] = new CornerPiece(colors, faces);
+
+        //front top right
+        colors.add(Color.RED);
+        colors.add(Color.YELLOW);
+        colors.add(Color.BLUE);
+
+        faces.add(Face.FRONT);
+        faces.add(Face.TOP);
+        faces.add(Face.RIGHT);
+
+        cube[TWO][ZERO][ZERO] = new CornerPiece(colors, faces);
+
+        //front bottom left
+        colors.add(Color.RED);
+        colors.add(Color.ORANGE);
+        colors.add(Color.WHITE);
+
+        faces.add(Face.FRONT);
+        faces.add(Face.BOTTOM);
+        faces.add(Face.LEFT);
+
+        cube[ZERO][TWO][ZERO] = new CornerPiece(colors, faces);
+
+        //front bottom right
+        colors.add(Color.RED);
+        colors.add(Color.ORANGE);
+        colors.add(Color.BLUE);
+
+        faces.add(Face.FRONT);
+        faces.add(Face.BOTTOM);
+        faces.add(Face.RIGHT);
+
+        cube[TWO][TWO][ZERO] = new CornerPiece(colors, faces);
+
+        //back top left
+        colors.add(Color.GREEN);
+        colors.add(Color.YELLOW);
+        colors.add(Color.WHITE);
+
+        faces.add(Face.BACK);
+        faces.add(Face.TOP);
+        faces.add(Face.LEFT);
+
+        cube[ZERO][ZERO][TWO] = new CornerPiece(colors, faces);
+
+        //back top right
+        colors.add(Color.GREEN);
+        colors.add(Color.YELLOW);
+        colors.add(Color.BLUE);
+
+        faces.add(Face.BACK);
+        faces.add(Face.TOP);
+        faces.add(Face.RIGHT);
+
+        cube[TWO][ZERO][TWO] = new CornerPiece(colors, faces);
+
+        //back bottom left
+        colors.add(Color.GREEN);
+        colors.add(Color.ORANGE);
+        colors.add(Color.WHITE);
+
+        faces.add(Face.BACK);
+        faces.add(Face.BOTTOM);
+        faces.add(Face.LEFT);
+
+        cube[ZERO][TWO][TWO] = new CornerPiece(colors, faces);
+
+        //back bottom right
+        colors.add(Color.GREEN);
+        colors.add(Color.ORANGE);
+        colors.add(Color.BLUE);
+
+        faces.add(Face.BACK);
+        faces.add(Face.BOTTOM);
+        faces.add(Face.RIGHT);
+
+        cube[TWO][TWO][TWO] = new CornerPiece(colors, faces);
+
+    }
+
     private void initializeEdgePieces(){
+
+
         //front top
-        cube[ONE][ZERO][ZERO] = new
+        ArrayList<Color> colors= new ArrayList<>();
+        colors.add(Color.RED);
+        colors.add(Color.YELLOW);
+        ArrayList<Face> faces = new ArrayList<>();
+        faces.add(Face.FRONT);
+        faces.add(Face.TOP);
+
+        cube[ONE][ZERO][ZERO] = new EdgePiece(colors, faces);
+
         //front left
-        cube[ZERO][ONE][ZERO];
+        colors = new ArrayList<>();
+        colors.add(Color.RED);
+        colors.add(Color.WHITE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.FRONT);
+        faces.add(Face.LEFT);
+
+        cube[ZERO][ONE][ZERO] = new EdgePiece(colors, faces);
+
         //front right
-        cube[TWO][ONE][ZERO];
+        colors = new ArrayList<>();
+        colors.add(Color.RED);
+        colors.add(Color.BLUE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.FRONT);
+        faces.add(Face.RIGHT);
+        cube[TWO][ONE][ZERO] = new EdgePiece(colors, faces);
+
         //front bottom
-        cube[ONE][TWO][ZERO];
+        colors = new ArrayList<>();
+        colors.add(Color.RED);
+        colors.add(Color.ORANGE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.FRONT);
+        faces.add(Face.BOTTOM);
+        cube[ONE][TWO][ZERO] = new EdgePiece(colors, faces);
 
         //back top
-        cube[ONE][ZERO][TWO];
+        colors = new ArrayList<>();
+        colors.add(Color.GREEN);
+        colors.add(Color.YELLOW);
+
+        faces = new ArrayList<>();
+        faces.add(Face.BACK);
+        faces.add(Face.TOP);
+        cube[ONE][ZERO][TWO] = new EdgePiece(colors, faces);
 
         //back left
-        cube[ZERO][ONE][TWO];
+        colors = new ArrayList<>();
+        colors.add(Color.GREEN);
+        colors.add(Color.WHITE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.BACK);
+        faces.add(Face.LEFT);
+        cube[ZERO][ONE][TWO] = new EdgePiece(colors, faces);
 
         //back right
-        cube[TWO][ONE][TWO];
+        colors = new ArrayList<>();
+        colors.add(Color.GREEN);
+        colors.add(Color.BLUE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.BACK);
+        faces.add(Face.RIGHT);
+        cube[TWO][ONE][TWO] = new EdgePiece(colors, faces);
 
         //back bottom
-        cube[ONE][TWO][TWO];
+        colors = new ArrayList<>();
+        colors.add(Color.GREEN);
+        colors.add(Color.ORANGE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.BACK);
+        faces.add(Face.BOTTOM);
+        cube[ONE][TWO][TWO] = new EdgePiece(colors, faces);
 
 
         //top left
-        cube[ZERO][ZERO][ONE];
+        colors = new ArrayList<>();
+        colors.add(Color.YELLOW);
+        colors.add(Color.WHITE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.TOP);
+        faces.add(Face.LEFT);
+        cube[ZERO][ZERO][ONE] = new EdgePiece(colors, faces);
+
         //top right
-        cube[TWO][ZERO][ONE];
+        colors = new ArrayList<>();
+        colors.add(Color.YELLOW);
+        colors.add(Color.BLUE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.TOP);
+        faces.add(Face.RIGHT);
+        cube[TWO][ZERO][ONE] = new EdgePiece(colors, faces);
 
         //bottom left
-        cube[ZERO][TWO][ONE];
+        colors = new ArrayList<>();
+        colors.add(Color.ORANGE);
+        colors.add(Color.WHITE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.BOTTOM);
+        faces.add(Face.LEFT);
+        cube[ZERO][TWO][ONE] = new EdgePiece(colors, faces);
 
         //bottom right
-        cube[TWO][TWO][ONE];
+        colors = new ArrayList<>();
+        colors.add(Color.ORANGE);
+        colors.add(Color.BLUE);
+
+        faces = new ArrayList<>();
+        faces.add(Face.BOTTOM);
+        faces.add(Face.RIGHT);
+        cube[TWO][TWO][ONE] = new EdgePiece(colors, faces);
 
     }
+
+    private void printVerticalFace(Face face){
+        int k;
+        switch (face){
+            case FRONT:
+                k = ZERO;
+            case BACK:
+                k = TWO;
+            default:
+                k = -1;
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Piece piece = cube[i][j][k];
+                //get color for the face of the piece
+                Color color = piece.getColorForFace(face);
+                //get the char of that color
+                char c = color.getCharacter();
+                //print that char
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void showCube(){
+        System.out.println("Front");
+        //print front face
+        printVerticalFace(Face.FRONT);
+
+        System.out.println("Right");
+        //print right face
+
+        System.out.println("Back");
+        //print back face
+
+        System.out.println("Left");
+        //print left face
+
+        System.out.println("Top");
+        //print top face
+
+        System.out.println("Bottom");
+        //print bottom face
+    }
+
+
 }
