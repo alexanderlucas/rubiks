@@ -363,30 +363,85 @@ public class RubiksCube {
     }
 
     private void rotateCapFace(Face face, Direction direction){
-        int k;
+        int j;
         if(face == Face.TOP){
-            k = ZERO;
+            j = ZERO;
         }
         else {
-            k = TWO;
+            j = TWO;
         }
+
+        Piece[][][] cubeCopy = getCubeCopy();
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                //if CW
-                //cube[j][2-i][k] = oldcube[i][j][k]
-                //else
-                //cube[2-j][i][k] = oldcube[i][j][k]
+            for (int k = 0; k < 3; k++) {
+                if(direction == Direction.CLOCKWISE){
+                    cube[k][j][2-i] = cubeCopy[i][j][k];
+                }
+                else {
+                    cube[2-k][j][i] = cubeCopy[i][j][k];
+                }
 
             }
         }
     }
 
     private void rotateVerticalFace(Face face, Direction direction){
+        int k;
+        if(face == Face.FRONT){
+            k = ZERO;
+        }
+        else {
+            k = TWO;
+        }
 
+        Piece[][][] cubeCopy = getCubeCopy();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(direction == Direction.CLOCKWISE){
+                    cube[j][2-i][k] = cubeCopy[i][j][k];
+                }
+                else{
+                    cube[2-j][i][k] = cubeCopy[i][j][k];
+
+                }
+            }
+        }
     }
 
     private void rotateSideFace(Face face, Direction direction){
+        int i;
+        if(face == Face.LEFT){
+            i = ZERO;
+        }
+        else {
+            i = TWO;
+        }
 
+        Piece[][][] cubeCopy = getCubeCopy();
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                if(direction == Direction.CLOCKWISE){
+                    cube[i][2-k][j] = cubeCopy[i][j][k];
+                }
+                else {
+                    cube[i][k][2-j] = cubeCopy[i][j][k];
+
+                }
+            }
+        }
+    }
+
+    private Piece[][][] getCubeCopy(){
+        Piece[][][] cubeCopy = new Piece[3][3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                for (int k = 0; k < 3; k++) {
+                    cubeCopy[i][j][k] = cube[i][j][k];
+                }
+            }
+        }
+        return cubeCopy;
     }
 
 }
