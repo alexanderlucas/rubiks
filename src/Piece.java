@@ -10,4 +10,5 @@ public interface Piece {
     public HashSet<Color> getColors();
     public Color getColorForFace(Face face);
     public void setFace(Color color);
+    public void updateFaces(boolean forward, Face rotatedFace);
 }

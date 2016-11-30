@@ -23,6 +23,17 @@ public enum Face {
     }
 
     public enum FaceClass {
-        VERTICAL, SIDE, CAP
+        VERTICAL(new Face[]{TOP, RIGHT, BOTTOM, LEFT}),
+        SIDE(new Face[]{TOP, FRONT, BOTTOM, BACK}),
+        CAP(new Face[]{BACK, RIGHT, FRONT, LEFT});
+
+        private final Face[] affectedFaces;
+
+        FaceClass(Face[] faces){
+            this.affectedFaces = faces;
+        }
+        public Face[] getAffectedFaces(){
+            return affectedFaces;
+        }
     }
 }

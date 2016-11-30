@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 
 /**
@@ -31,5 +32,21 @@ public class EdgePiece implements Piece {
     @Override
     public void setFace(Color color) {
 
+    }
+
+    @Override
+    public void updateFaces(boolean forward, Face rotatedFace) {
+        Face[] affectedFaces = rotatedFace.getFaceClass().getAffectedFaces();
+
+        for (Face face:faces) {
+            if(face != rotatedFace){
+                if (forward){
+                    int index = 
+                }
+                else {
+
+                }
+            }
+        }
     }
 }

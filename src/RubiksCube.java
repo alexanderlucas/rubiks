@@ -354,32 +354,6 @@ public class RubiksCube {
         printLeftTopRight();
         printFrontFace();
 
-
-
-//        System.out.println("Front");
-//        //print front face
-//        printVerticalFace(Face.FRONT);
-//
-//        System.out.println("Right");
-//        printSideFace(Face.RIGHT);
-//        //print right face
-//
-//        System.out.println("Back");
-//        printVerticalFace(Face.BACK);
-//
-//        //print back face
-//
-//        System.out.println("Left");
-//        printSideFace(Face.LEFT);
-//        //print left face
-//
-//        System.out.println("Top");
-//        //print top face
-//        printCapFace(Face.TOP);
-//
-//        System.out.println("Bottom");
-//        printCapFace(Face.BOTTOM);
-//        //print bottom face
     }
 
     public void rotateFace(Face face, Direction direction){
@@ -416,6 +390,27 @@ public class RubiksCube {
                 }
 
             }
+        }
+        face.rotate
+    }
+
+    private boolean rotateForward(Face face, Direction direction){
+        if((isFrontTopLeft(face) && direction == Direction.CLOCKWISE) ||
+                (!isFrontTopLeft(face) && direction == Direction.COUNTERCLOCKWISE)){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    private boolean isFrontTopLeft(Face face){
+        if(face == Face.FRONT || face == Face.TOP || face == Face.LEFT){
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
