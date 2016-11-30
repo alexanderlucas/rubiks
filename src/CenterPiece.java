@@ -30,4 +30,23 @@ public class CenterPiece implements Piece {
     public void setFace(Color color) {
 
     }
+    @Override
+    public void updateFaces(boolean forward, Face rotatedFace) {
+        ArrayList<Face> affectedFaces = rotatedFace.getFaceClass().getAffectedFaces();
+
+        int size = affectedFaces.size();
+        for (Face face:faces) {
+            if(face != rotatedFace){
+                Face newFace;
+                if (forward){
+                    newFace = affectedFaces.get((affectedFaces.indexOf(face) + 1) % size);
+                }
+                else {
+                    newFace = affectedFaces.get((affectedFaces.indexOf(face) - 1) % size);
+                }
+                faces.set(faces.indexOf(face), newFace);
+
+            }
+        }
+    }
 }

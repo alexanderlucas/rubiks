@@ -36,16 +36,20 @@ public class EdgePiece implements Piece {
 
     @Override
     public void updateFaces(boolean forward, Face rotatedFace) {
-        Face[] affectedFaces = rotatedFace.getFaceClass().getAffectedFaces();
+        ArrayList<Face> affectedFaces = rotatedFace.getFaceClass().getAffectedFaces();
 
+        int size = affectedFaces.size();
         for (Face face:faces) {
             if(face != rotatedFace){
+                Face newFace;
                 if (forward){
-                    int index = 
+                    newFace = affectedFaces.get((affectedFaces.indexOf(face) + 1) % size);
                 }
                 else {
-
+                    newFace = affectedFaces.get((affectedFaces.indexOf(face) - 1) % size);
                 }
+                faces.set(faces.indexOf(face), newFace);
+
             }
         }
     }

@@ -388,10 +388,14 @@ public class RubiksCube {
                 else {
                     cube[2-k][j][i] = cubeCopy[i][j][k];
                 }
+                Piece piece = cubeCopy[i][j][k];
+
+                piece.updateFaces(rotateForward(face, direction),face);
+
 
             }
         }
-        face.rotate
+
     }
 
     private boolean rotateForward(Face face, Direction direction){
@@ -433,6 +437,10 @@ public class RubiksCube {
                     cube[2-j][i][k] = cubeCopy[i][j][k];
 
                 }
+                Piece piece = cubeCopy[i][j][k];
+
+                piece.updateFaces(rotateForward(face, direction),face);
+
             }
         }
     }
@@ -456,6 +464,10 @@ public class RubiksCube {
                     cube[i][k][2-j] = cubeCopy[i][j][k];
 
                 }
+                Piece piece = cubeCopy[i][j][k];
+
+                piece.updateFaces(rotateForward(face, direction),face);
+
             }
         }
     }
