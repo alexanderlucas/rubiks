@@ -24,24 +24,25 @@ public class CornerPiece implements Piece {
     }
 
     @Override
-    public void setFace(Color color) {
-
-    }
-    @Override
     public void updateFaces(boolean forward, Face rotatedFace) {
         ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
 
         int size = affectedFaces.size();
-        for (Face face:faces) {
+        for (int i = 0; i < 3; i++) {
+            Face face = faces.get(i);
             if(face != rotatedFace){
                 Face newFace;
                 if (forward){
-                    newFace = affectedFaces.get((affectedFaces.indexOf(face) + 1) % size);
+                    int index = (affectedFaces.indexOf(face) + 1);
+                    index = Math.floorMod(index, size);
+                    newFace = affectedFaces.get(index);
                 }
                 else {
-                    newFace = affectedFaces.get((affectedFaces.indexOf(face) - 1) % size);
+                    int index = affectedFaces.indexOf(face) - 1;
+                    index = Math.floorMod(index, size);
+                    newFace = affectedFaces.get(index);
                 }
-                faces.set(faces.indexOf(face), newFace);
+                faces.set(i, newFace);
 
             }
         }

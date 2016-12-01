@@ -45,10 +45,12 @@ public class RubiksCube {
         cube[ZERO][ZERO][ZERO] = new CornerPiece(colors, faces);
 
         //front top right
+        colors = new ArrayList<>();
         colors.add(Color.RED);
         colors.add(Color.YELLOW);
         colors.add(Color.BLUE);
 
+        faces = new ArrayList<>();
         faces.add(Face.FRONT);
         faces.add(Face.TOP);
         faces.add(Face.RIGHT);
@@ -56,10 +58,12 @@ public class RubiksCube {
         cube[TWO][ZERO][ZERO] = new CornerPiece(colors, faces);
 
         //front bottom left
+        colors = new ArrayList<>();
         colors.add(Color.RED);
         colors.add(Color.ORANGE);
         colors.add(Color.WHITE);
 
+        faces = new ArrayList<>();
         faces.add(Face.FRONT);
         faces.add(Face.BOTTOM);
         faces.add(Face.LEFT);
@@ -67,10 +71,12 @@ public class RubiksCube {
         cube[ZERO][TWO][ZERO] = new CornerPiece(colors, faces);
 
         //front bottom right
+        colors = new ArrayList<>();
         colors.add(Color.RED);
         colors.add(Color.ORANGE);
         colors.add(Color.BLUE);
 
+        faces = new ArrayList<>();
         faces.add(Face.FRONT);
         faces.add(Face.BOTTOM);
         faces.add(Face.RIGHT);
@@ -78,10 +84,12 @@ public class RubiksCube {
         cube[TWO][TWO][ZERO] = new CornerPiece(colors, faces);
 
         //back top left
+        colors = new ArrayList<>();
         colors.add(Color.GREEN);
         colors.add(Color.YELLOW);
         colors.add(Color.WHITE);
 
+        faces = new ArrayList<>();
         faces.add(Face.BACK);
         faces.add(Face.TOP);
         faces.add(Face.LEFT);
@@ -89,10 +97,12 @@ public class RubiksCube {
         cube[ZERO][ZERO][TWO] = new CornerPiece(colors, faces);
 
         //back top right
+        colors = new ArrayList<>();
         colors.add(Color.GREEN);
         colors.add(Color.YELLOW);
         colors.add(Color.BLUE);
 
+        faces = new ArrayList<>();
         faces.add(Face.BACK);
         faces.add(Face.TOP);
         faces.add(Face.RIGHT);
@@ -100,10 +110,12 @@ public class RubiksCube {
         cube[TWO][ZERO][TWO] = new CornerPiece(colors, faces);
 
         //back bottom left
+        colors = new ArrayList<>();
         colors.add(Color.GREEN);
         colors.add(Color.ORANGE);
         colors.add(Color.WHITE);
 
+        faces = new ArrayList<>();
         faces.add(Face.BACK);
         faces.add(Face.BOTTOM);
         faces.add(Face.LEFT);
@@ -111,10 +123,12 @@ public class RubiksCube {
         cube[ZERO][TWO][TWO] = new CornerPiece(colors, faces);
 
         //back bottom right
+        colors = new ArrayList<>();
         colors.add(Color.GREEN);
         colors.add(Color.ORANGE);
         colors.add(Color.BLUE);
 
+        faces = new ArrayList<>();
         faces.add(Face.BACK);
         faces.add(Face.BOTTOM);
         faces.add(Face.RIGHT);
@@ -287,8 +301,6 @@ public class RubiksCube {
         }
     }
 
-
-
     private void printLeftTopRight(){
         for (int k = 2; k >= 0; k--) {
             for (int j = 2; j >= 0; j--) {
@@ -342,10 +354,9 @@ public class RubiksCube {
         }
     }
 
-
-
-
-
+    public Piece[][][] getCube(){
+        return cube;
+    }
 
     public void showCube(){
 

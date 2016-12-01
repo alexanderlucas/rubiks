@@ -27,10 +27,6 @@ public class CenterPiece implements Piece {
     }
 
     @Override
-    public void setFace(Color color) {
-
-    }
-    @Override
     public void updateFaces(boolean forward, Face rotatedFace) {
         ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
 

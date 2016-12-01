@@ -5,7 +5,9 @@ public class Main {
     public static void main(String[] args) {
         RubiksCube rubiksCube = new RubiksCube();
         rubiksCube.showCube();
-        rubiksCube.rotateFace(Face.TOP, Direction.CLOCKWISE);
+        rubiksCube.rotateFace(Face.LEFT, Direction.CLOCKWISE);
+        rubiksCube.showCube();
+        rubiksCube.rotateFace(Face.LEFT, Direction.COUNTERCLOCKWISE);
         rubiksCube.showCube();
     }
 }

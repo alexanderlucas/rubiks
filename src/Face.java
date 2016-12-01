@@ -27,6 +27,7 @@ public enum Face {
     public FaceClass getFaceClass() {
         return faceClass;
     }
+
     public ArrayList<Face> getAffectedFaces(){
         ArrayList<Face> affected = new ArrayList<>();
         switch(faceClass){
@@ -56,7 +57,5 @@ public enum Face {
         VERTICAL,
         SIDE,
         CAP
-
-
     }
 }

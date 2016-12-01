@@ -31,34 +31,24 @@ public class EdgePiece implements Piece {
     }
 
     @Override
-    public void setFace(Color color) {
-
-    }
-
-    @Override
     public void updateFaces(boolean forward, Face rotatedFace) {
-        System.out.println(rotatedFace.getFaceClass());
         ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
-        for (Face face:affectedFaces) {
-            System.out.println(face);
-        }
         int size = affectedFaces.size();
-        for (Face face:faces) {
+        for (int i = 0; i < 2; i++) {
+            Face face = faces.get(i);
             if(face != rotatedFace){
                 Face newFace;
                 if (forward){
-                    System.out.println(face);
-                    System.out.println(affectedFaces.indexOf(face));
-                    int index = (affectedFaces.indexOf(face) + 1) % size;
-                    System.out.println(index);
+                    int index = (affectedFaces.indexOf(face) + 1);
+                    index = Math.floorMod(index, size);
                     newFace = affectedFaces.get(index);
                 }
                 else {
-                    newFace = affectedFaces.get((affectedFaces.indexOf(face) - 1) % size);
+                    int index = affectedFaces.indexOf(face) - 1;
+                    index = Math.floorMod(index, size);
+                    newFace = affectedFaces.get(index);
                 }
-                System.out.println("old: "+face);
-                System.out.println("new: "+newFace);
-                faces.set(faces.indexOf(face), newFace);
+                faces.set(i, newFace);
 
             }
         }
