@@ -3,32 +3,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-//        RubiksCube rubiksCube = new RubiksCube();
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.BOTTOM, Direction.FORWARD);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.BOTTOM, Direction.BACKWARDS);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.TOP, Direction.FORWARD);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.TOP, Direction.BACKWARDS);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.LEFT, Direction.FORWARD);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.LEFT, Direction.BACKWARDS);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.RIGHT, Direction.FORWARD);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.RIGHT, Direction.BACKWARDS);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.FRONT, Direction.FORWARD);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.FRONT, Direction.BACKWARDS);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.BACK, Direction.FORWARD);
-//        rubiksCube.showCube();
-//        rubiksCube.rotateFace(Face.BACK, Direction.BACKWARDS);
-//        rubiksCube.showCube();
+
         stressTest();
     }
 

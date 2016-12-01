@@ -24,7 +24,7 @@ public class EdgePiece implements Piece {
     public void updateFaces(boolean forward, Face rotatedFace) {
         ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
         int size = affectedFaces.size();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 2; i++) { //edge pieces have two faces
             Face face = faces.get(i);
             if(face != rotatedFace){
                 Face newFace;
