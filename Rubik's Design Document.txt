@@ -1,7 +1,7 @@
 Assignment 11 — Design Document
 
 interface Piece
-
+	
 	HashMap(Color:Face)//same keys, changing values
 
 	getColors
@@ -9,7 +9,7 @@ interface Piece
 	setFace(Color) //sets the face values (esp. after rotation)
 
 
-Each extension of Piece
+Each extension of Piece 
 class CornerPiece extends Piece
 colors = [3]
 faces = [3]
@@ -75,37 +75,110 @@ For each of 6 faces, there are two directions they can be rotated. The following
 rotateFace(Face, Direction)
 	CW Front
 	[i][j][0] -> [j][2-i][0]
-	CCW Front
+	top -> right
+	right -> bottom
+	bottom -> left
+	left -> top
+
+	CCW Front 
 	[i][j][0] -> [2-j][i][0]
+	top -> left
+	left -> bottom
+	bottom -> right
+	right -> top
 
 	CW Back
 	[i][j][2] -> [j][2-i][2]
+	top -> left
+	left -> bottom
+	bottom -> right
+	right -> top
+
 	CCW Back
 	[i][j][2] -> [2-j][i][2]
+	002 022
+	top -> right
+	right -> bottom
+	bottom -> left
+	left -> top
 
 	CW Top
 	[i][0][k] -> [k][0][2-i]
+	back -> right
+	right -> front
+	front -> left
+	left -> back
+
 	CCW Top
 	[i][0][k] -> [2-k][2][i]
+	back -> left
+	left -> front
+	front -> right
+	right -> back
 
 	CW Bottom
-	[i][2][k] -> [k][0][2-i]
+	[i][2][k] -> [k][2][2-i]
+	020 220
+	back -> left
+	left -> front
+	front -> right
+	right -> back
+
 	CCW Bottom
 	[i][2][k] -> [2-k][2][i]
+	020 022
+	back -> right
+	right -> front
+	front -> left
+	left -> back
 
 	CW Left
 	[0][j][k] -> [0][2-k][j]
+	top -> front
+	front -> bottom
+	bottom -> back
+	back -> top
+
 	CCW Left
 	[0][j][k] -> [0][k][2-j]
+	top -> back
+	back -> bottom
+	bottom -> front
+	front -> top
 
 	CW Right
-	[2][j][k] -> [2][2-k][j]
-	CCW Left
 	[2][j][k] -> [2][k][2-j]
+	top -> back
+	back -> bottom
+	bottom -> front
+	front -> top
+
+	CCW Right
+	[2][j][k] -> [2][2-k][j]
+	[2][0][0] -> [2][2][0]
+	[2][0][1] -> [2][1][0]
+	[2][0][2] -> [2][0][0]
+	[2][1][0] -> [2][2][1]
+	[2][1][1] -> [2][1][1]
+	[2][1][2] -> [2][0][1]
+	[2][2][0] -> [2][2][2]
+	[2][2][1] -> [2][1][2]
+	[2][2][2] -> [2][0][2]
+	top -> front
+	front -> bottom
+	bottom -> back
+	back -> top
 
 	setFace for each Piece color
+		for each face in faces
+			if is rotating face, do nothing
+			else, (EDGE) get face to Direction, change face
+			else, (CORNER)
 
-Returns the 4 Faces that are affected by the rotation of the given face.
+Returns the 4 Faces that are affected by the rotation of the given face. 
 getNeighbors(Face face) -> [Face]
+
+
+
 
 
