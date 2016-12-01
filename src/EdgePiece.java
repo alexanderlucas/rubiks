@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -36,18 +37,27 @@ public class EdgePiece implements Piece {
 
     @Override
     public void updateFaces(boolean forward, Face rotatedFace) {
-        ArrayList<Face> affectedFaces = rotatedFace.getFaceClass().getAffectedFaces();
-
+        System.out.println(rotatedFace.getFaceClass());
+        ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
+        for (Face face:affectedFaces) {
+            System.out.println(face);
+        }
         int size = affectedFaces.size();
         for (Face face:faces) {
             if(face != rotatedFace){
                 Face newFace;
                 if (forward){
-                    newFace = affectedFaces.get((affectedFaces.indexOf(face) + 1) % size);
+                    System.out.println(face);
+                    System.out.println(affectedFaces.indexOf(face));
+                    int index = (affectedFaces.indexOf(face) + 1) % size;
+                    System.out.println(index);
+                    newFace = affectedFaces.get(index);
                 }
                 else {
                     newFace = affectedFaces.get((affectedFaces.indexOf(face) - 1) % size);
                 }
+                System.out.println("old: "+face);
+                System.out.println("new: "+newFace);
                 faces.set(faces.indexOf(face), newFace);
 
             }

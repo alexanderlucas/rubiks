@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -17,26 +18,45 @@ public enum Face {
 
     private final FaceClass faceClass;
 
+
     Face(FaceClass faceClass) {
         this.faceClass = faceClass;
+
     }
 
     public FaceClass getFaceClass() {
         return faceClass;
     }
+    public ArrayList<Face> getAffectedFaces(){
+        ArrayList<Face> affected = new ArrayList<>();
+        switch(faceClass){
+            case CAP:
+                affected.add(BACK);
+                affected.add(RIGHT);
+                affected.add(FRONT);
+                affected.add(LEFT);
+                break;
+            case SIDE:
+                affected.add(TOP);
+                affected.add(FRONT);
+                affected.add(BOTTOM);
+                affected.add(BACK);
+                break;
+            case VERTICAL:
+                affected.add(TOP);
+                affected.add(RIGHT);
+                affected.add(BOTTOM);
+                affected.add(LEFT);
+                break;
+        }
+        return affected;
+    }
 
     public enum FaceClass {
-        VERTICAL(new ArrayList(Arrays.asList(new Face[]{TOP, RIGHT, BOTTOM, LEFT}))),
-        SIDE(new ArrayList(Arrays.asList(new Face[]{TOP, FRONT, BOTTOM, BACK}))),
-        CAP(new ArrayList(Arrays.asList(new Face[]{BACK, RIGHT, FRONT, LEFT})));
+        VERTICAL,
+        SIDE,
+        CAP
 
-        private final ArrayList<Face> affectedFaces;
 
-        FaceClass(ArrayList faces){
-            this.affectedFaces = faces;
-        }
-        public ArrayList<Face> getAffectedFaces(){
-            return affectedFaces;
-        }
     }
 }

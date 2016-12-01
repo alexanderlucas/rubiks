@@ -29,7 +29,7 @@ public class CornerPiece implements Piece {
     }
     @Override
     public void updateFaces(boolean forward, Face rotatedFace) {
-        ArrayList<Face> affectedFaces = rotatedFace.getFaceClass().getAffectedFaces();
+        ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
 
         int size = affectedFaces.size();
         for (Face face:faces) {
