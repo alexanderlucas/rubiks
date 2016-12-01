@@ -457,6 +457,6 @@ public class RubiksCube {
         }
         return cubeCopy;
     }
-    
+
 
 }

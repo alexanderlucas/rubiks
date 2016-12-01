@@ -25,8 +25,65 @@ public class RubiksCubeTest {
     }
 
     @Test
-    public void rotateFace() throws Exception {
+    public void rotateTopFaceForward() throws Exception {
+        rubiksCube.rotateFace(Face.TOP, Direction.FORWARD);
 
+
+    }
+    @Test
+    public void rotateTopFaceBackwards() throws Exception {
+        rubiksCube.rotateFace(Face.TOP, Direction.BACKWARDS);
+
+
+    }
+
+
+    @Test
+    public void rotateBottomFaceForward() throws Exception {
+        rubiksCube.rotateFace(Face.BOTTOM, Direction.FORWARD);
+
+    }
+    @Test
+    public void rotateBottomFaceBackwards() throws Exception {
+        rubiksCube.rotateFace(Face.BOTTOM, Direction.BACKWARDS);
+    }
+
+
+    @Test
+    public void rotateLeftFaceForward() throws Exception {
+        rubiksCube.rotateFace(Face.LEFT, Direction.FORWARD);
+
+    }
+    @Test
+    public void rotateLeftFaceBackwards() throws Exception {
+        rubiksCube.rotateFace(Face.LEFT, Direction.BACKWARDS);
+    }
+
+    @Test
+    public void rotateRightFaceForward() throws Exception {
+        rubiksCube.rotateFace(Face.RIGHT, Direction.FORWARD);
+    }
+    @Test
+    public void rotateRightFaceBackwards() throws Exception {
+        rubiksCube.rotateFace(Face.RIGHT, Direction.BACKWARDS);
+    }
+
+    @Test
+    public void rotateFrontFaceForward() throws Exception {
+        rubiksCube.rotateFace(Face.FRONT, Direction.FORWARD);
+    }
+    @Test
+    public void rotateFrontFaceBackwards() throws Exception {
+        rubiksCube.rotateFace(Face.FRONT, Direction.BACKWARDS);
+    }
+
+    @Test
+    public void rotateBackFaceForward() throws Exception {
+        rubiksCube.rotateFace(Face.BACK, Direction.FORWARD);
+    }
+    @Test
+    public void rotateBackFaceBackwards() throws Exception {
+        rubiksCube.rotateFace(Face.BACK, Direction.BACKWARDS);
     }
 
 }
