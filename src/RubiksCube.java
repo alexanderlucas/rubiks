@@ -441,7 +441,7 @@ public class RubiksCube {
         }
     }
 
-    private Piece[][][] getCubeCopy(){
+    public Piece[][][] getCubeCopy(){
         Piece[][][] cubeCopy = new Piece[3][3][3];
 
         for (int i = 0; i < 3; i++) {
