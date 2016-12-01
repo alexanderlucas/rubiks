@@ -1,6 +1,10 @@
 import com.sun.xml.internal.ws.addressing.WsaTubeHelperImpl;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
+import static org.junit.Assert.*;
+
 
 /**
  * Created by alexlucas on 29/11/2016.
@@ -19,6 +23,37 @@ public class RubiksCube {
         initializeEdgePieces();
 
     }
+
+
+
+    public Piece[][][] getCube(){
+        return cube;
+    }
+
+    public void showCube(){
+
+        printBottomFace();
+        printBackFace();
+        printLeftTopRight();
+        printFrontFace();
+
+    }
+
+    public void rotateFace(Face face, Direction direction){
+        switch (face.getFaceClass()){
+            case CAP:
+                rotateCapFace(face, direction);
+                break;
+            case VERTICAL:
+                rotateVerticalFace(face, direction);
+                break;
+            case SIDE:
+                rotateSideFace(face, direction);
+                break;
+        }
+    }
+
+
 
     private void initializeCenterPieces(){
         cube[ONE][ONE][ZERO] = new CenterPiece(Color.RED, Face.FRONT);
@@ -273,34 +308,6 @@ public class RubiksCube {
         System.out.print(c + " ");
     }
 
-    private void printVerticalFace(Face face){
-        if (face == Face.FRONT){
-            printFrontFace();
-        }
-        else{
-            printBackFace();
-        }
-    }
-
-    private void printCapFace(Face face){
-        if(face == Face.TOP){
-            //printTopFace();
-        }
-        else {
-            printBottomFace();
-        }
-
-    }
-
-    private void printSideFace(Face face){
-        if (face == Face.LEFT){
-           // printLeftFace();
-        }
-        else {
-          //  printRightFace();
-        }
-    }
-
     private void printLeftTopRight(){
         for (int k = 2; k >= 0; k--) {
             for (int j = 2; j >= 0; j--) {
@@ -354,33 +361,6 @@ public class RubiksCube {
         }
     }
 
-    public Piece[][][] getCube(){
-        return cube;
-    }
-
-    public void showCube(){
-
-        printBottomFace();
-        printBackFace();
-        printLeftTopRight();
-        printFrontFace();
-
-    }
-
-    public void rotateFace(Face face, Direction direction){
-        switch (face.getFaceClass()){
-            case CAP:
-                rotateCapFace(face, direction);
-                break;
-            case VERTICAL:
-                rotateVerticalFace(face, direction);
-                break;
-            case SIDE:
-                rotateSideFace(face, direction);
-                break;
-        }
-    }
-
     private void rotateCapFace(Face face, Direction direction){
         int j;
         if(face == Face.TOP){
@@ -393,40 +373,21 @@ public class RubiksCube {
         Piece[][][] cubeCopy = getCubeCopy();
         for (int i = 0; i < 3; i++) {
             for (int k = 0; k < 3; k++) {
-                if(direction == Direction.CLOCKWISE){
-                    cube[k][j][2-i] = cubeCopy[i][j][k];
-                }
-                else {
-                    cube[2-k][j][i] = cubeCopy[i][j][k];
-                }
                 Piece piece = cubeCopy[i][j][k];
 
-                piece.updateFaces(rotateForward(face, direction),face);
+                if(direction == Direction.FORWARD){
+                    cube[k][j][2-i] = piece;
+                    piece.updateFaces(true, face);
+                }
+                else {
+                    cube[2-k][j][i] = piece;
+                    piece.updateFaces(false, face);
+                }
 
 
             }
         }
 
-    }
-
-    private boolean rotateForward(Face face, Direction direction){
-        if((isFrontTopLeft(face) && direction == Direction.CLOCKWISE) ||
-                (!isFrontTopLeft(face) && direction == Direction.COUNTERCLOCKWISE)){
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-
-    private boolean isFrontTopLeft(Face face){
-        if(face == Face.FRONT || face == Face.TOP || face == Face.LEFT){
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 
     private void rotateVerticalFace(Face face, Direction direction){
@@ -441,16 +402,16 @@ public class RubiksCube {
         Piece[][][] cubeCopy = getCubeCopy();
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if(direction == Direction.CLOCKWISE){
-                    cube[j][2-i][k] = cubeCopy[i][j][k];
-                }
-                else{
-                    cube[2-j][i][k] = cubeCopy[i][j][k];
-
-                }
                 Piece piece = cubeCopy[i][j][k];
 
-                piece.updateFaces(rotateForward(face, direction),face);
+                if(direction == Direction.FORWARD){
+                    cube[2-j][i][k] = piece;
+                    piece.updateFaces(true, face);
+                }
+                else{
+                    cube[j][2-i][k] = piece;
+                    piece.updateFaces(false, face);
+                }
 
             }
         }
@@ -468,16 +429,17 @@ public class RubiksCube {
         Piece[][][] cubeCopy = getCubeCopy();
         for (int j = 0; j < 3; j++) {
             for (int k = 0; k < 3; k++) {
-                if(direction == Direction.CLOCKWISE){
-                    cube[i][2-k][j] = cubeCopy[i][j][k];
-                }
-                else {
-                    cube[i][k][2-j] = cubeCopy[i][j][k];
-
-                }
                 Piece piece = cubeCopy[i][j][k];
 
-                piece.updateFaces(rotateForward(face, direction),face);
+                if(direction == Direction.FORWARD){
+                    cube[i][2-k][j] = piece;
+                    piece.updateFaces(true, face);
+                }
+                else {
+                    cube[i][k][2-j] = piece;
+                    piece.updateFaces(false, face);
+                }
+
 
             }
         }
@@ -495,5 +457,6 @@ public class RubiksCube {
         }
         return cubeCopy;
     }
+    
 
 }

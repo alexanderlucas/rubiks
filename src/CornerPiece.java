@@ -15,7 +15,11 @@ public class CornerPiece implements Piece {
 
     @Override
     public HashSet<Color> getColors() {
-        return null;
+        HashSet<Color> set = new HashSet<>();
+        for (Color c: colors) {
+            set.add(c);
+        }
+        return set;
     }
 
     @Override
@@ -42,6 +46,7 @@ public class CornerPiece implements Piece {
                     index = Math.floorMod(index, size);
                     newFace = affectedFaces.get(index);
                 }
+
                 faces.set(i, newFace);
 
             }
