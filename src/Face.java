@@ -59,6 +59,33 @@ public enum Face {
         return setIndex;
     }
 
+    public int[] getIBounds(){
+        if(faceClass == FaceClass.SIDE){
+            return new int[]{setIndex, setIndex};
+        }
+        else{
+            return new int[]{0, 2};
+        }
+    }
+    public int[] getJBounds(){
+        if(faceClass == FaceClass.CAP){
+            return new int[]{setIndex, setIndex};
+        }
+        else{
+            return new int[]{0, 2};
+        }
+    }
+    public int[] getKBounds(){
+        if(faceClass == FaceClass.VERTICAL){
+            return new int[]{setIndex, setIndex};
+        }
+        else{
+            return new int[]{0, 2};
+        }
+    }
+
+
+
     public enum FaceClass {
         VERTICAL,
         SIDE,

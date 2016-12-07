@@ -75,6 +75,8 @@ For each of 6 faces, there are two directions they can be rotated. The following
 rotateFace(Face, Direction)
 	CW Front
 	[i][j][0] -> [j][2-i][0]
+	000 -> 020
+	010 -> 210
 	top -> right
 	right -> bottom
 	bottom -> left

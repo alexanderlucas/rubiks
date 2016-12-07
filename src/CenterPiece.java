@@ -25,4 +25,14 @@ public class CenterPiece implements Piece {
             throw new IllegalStateException("Center pieces cannot changes faces");
         }
     }
+
+    @Override
+    public void printPiece(Face face) {
+        Color color = getColorForFace(face);
+        //get the char of that color
+        char c = color.getCharacter();
+        //print that char
+        System.out.print(c + " ");
+
+    }
 }

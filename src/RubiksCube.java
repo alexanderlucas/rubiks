@@ -35,21 +35,6 @@ public class RubiksCube {
 
     }
 
-    public void rotateFace(Face face, Direction direction){
-        switch (face.getFaceClass()){
-            case CAP:
-                rotateCapFace(face, direction);
-                break;
-            case VERTICAL:
-                rotateVerticalFace(face, direction);
-                break;
-            case SIDE:
-                rotateSideFace(face, direction);
-                break;
-        }
-    }
-
-
 
     private void initializeCenterPieces(){
         cube[ONE][ONE][ZERO] = new CenterPiece(Color.RED, Face.FRONT);
@@ -348,74 +333,57 @@ public class RubiksCube {
         }
     }
 
-    private void rotateCapFace(Face face, Direction direction){
-        int j = face.getSetIndex();
+    private int[] orderIndices(Face face, int i, int j, int k){
+        int[] orderedIndices = new int[2];
 
-        Piece[][][] cubeCopy = getCubeCopy();
-        for (int i = 0; i < 3; i++) {
-            for (int k = 0; k < 3; k++) {
-                Piece piece = cubeCopy[i][j][k];
-
-                if(direction == Direction.FORWARD){
-                    cube[k][j][2-i] = piece;
-                    piece.updateFaces(true, face);
-                }
-                else {
-                    cube[2-k][j][i] = piece;
-                    piece.updateFaces(false, face);
-                }
-
-
-            }
+        switch (face.getFaceClass()){
+            case CAP:
+                orderedIndices = new int[]{k, j,2-i};
+                break;
+            case VERTICAL:
+                orderedIndices = new int[]{2-j, i, k};
+                break;
+            case SIDE:
+                orderedIndices = new int[]{i, 2-k, j};
+                break;
         }
 
+        return orderedIndices;
     }
 
-    private void rotateVerticalFace(Face face, Direction direction){
-        int k = face.getSetIndex();
-
-
+    private void rotateFace(Face face){
+        int[] indices;
         Piece[][][] cubeCopy = getCubeCopy();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                Piece piece = cubeCopy[i][j][k];
 
-                if(direction == Direction.FORWARD){
-                    cube[2-j][i][k] = piece;
+        int[] iBounds = face.getIBounds();
+        int[] jBounds = face.getJBounds();
+        int[] kBounds = face.getKBounds();
+
+        for (int i = iBounds[0]; i <= iBounds[1]; i++) {
+            for (int j = jBounds[0]; j <= jBounds[1]; j++) {
+                for (int k = kBounds[0]; k <= kBounds[1]; k++) {
+                    indices = orderIndices(face, i, j, k);
+                    Piece piece = cubeCopy[i][j][k];
+
+                    cube[indices[0]][indices[1]][indices[2]] = piece;
                     piece.updateFaces(true, face);
-                }
-                else{
-                    cube[j][2-i][k] = piece;
-                    piece.updateFaces(false, face);
-                }
 
+                }
             }
         }
     }
 
-    private void rotateSideFace(Face face, Direction direction){
-        int i = face.getSetIndex();
-
-
-        Piece[][][] cubeCopy = getCubeCopy();
-        for (int j = 0; j < 3; j++) {
-            for (int k = 0; k < 3; k++) {
-                Piece piece = cubeCopy[i][j][k];
-
-                if(direction == Direction.FORWARD){
-                    cube[i][2-k][j] = piece;
-                    piece.updateFaces(true, face);
-                }
-                else {
-                    cube[i][k][2-j] = piece;
-                    piece.updateFaces(false, face);
-                }
-
-
+    public void rotateFace(Face face, Direction direction){
+        if(direction == Direction.FORWARD){
+            rotateFace(face);
+        }
+        else {
+            for (int i = 0; i < 3; i++) {
+                rotateFace(face);
             }
         }
-    }
 
+    }
 
     public Piece[][][] getCubeCopy(){
         Piece[][][] cubeCopy = new Piece[3][3][3];
