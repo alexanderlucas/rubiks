@@ -349,13 +349,7 @@ public class RubiksCube {
     }
 
     private void rotateCapFace(Face face, Direction direction){
-        int j;
-        if(face == Face.TOP){
-            j = ZERO;
-        }
-        else {
-            j = TWO;
-        }
+        int j = face.getSetIndex();
 
         Piece[][][] cubeCopy = getCubeCopy();
         for (int i = 0; i < 3; i++) {
@@ -378,13 +372,8 @@ public class RubiksCube {
     }
 
     private void rotateVerticalFace(Face face, Direction direction){
-        int k;
-        if(face == Face.FRONT){
-            k = ZERO;
-        }
-        else {
-            k = TWO;
-        }
+        int k = face.getSetIndex();
+
 
         Piece[][][] cubeCopy = getCubeCopy();
         for (int i = 0; i < 3; i++) {
@@ -405,13 +394,8 @@ public class RubiksCube {
     }
 
     private void rotateSideFace(Face face, Direction direction){
-        int i;
-        if(face == Face.LEFT){
-            i = ZERO;
-        }
-        else {
-            i = TWO;
-        }
+        int i = face.getSetIndex();
+
 
         Piece[][][] cubeCopy = getCubeCopy();
         for (int j = 0; j < 3; j++) {
@@ -431,6 +415,7 @@ public class RubiksCube {
             }
         }
     }
+
 
     public Piece[][][] getCubeCopy(){
         Piece[][][] cubeCopy = new Piece[3][3][3];

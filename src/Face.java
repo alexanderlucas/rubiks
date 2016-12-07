@@ -9,18 +9,20 @@ import java.util.Arrays;
 
 public enum Face {
 
-    TOP(FaceClass.CAP),
-    BOTTOM(FaceClass.CAP),
-    LEFT(FaceClass.SIDE),
-    RIGHT(FaceClass.SIDE),
-    FRONT(FaceClass.VERTICAL),
-    BACK(FaceClass.VERTICAL);
+    TOP(FaceClass.CAP, 0),
+    BOTTOM(FaceClass.CAP, 2),
+    LEFT(FaceClass.SIDE, 0),
+    RIGHT(FaceClass.SIDE, 2),
+    FRONT(FaceClass.VERTICAL, 0),
+    BACK(FaceClass.VERTICAL, 2);
 
     private final FaceClass faceClass;
+    private final int setIndex;
 
 
-    Face(FaceClass faceClass) {
+    Face(FaceClass faceClass, int setIndex) {
         this.faceClass = faceClass;
+        this.setIndex = setIndex;
 
     }
 
@@ -51,6 +53,10 @@ public enum Face {
                 break;
         }
         return affected;
+    }
+
+    public int getSetIndex(){
+        return setIndex;
     }
 
     public enum FaceClass {
