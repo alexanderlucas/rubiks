@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87be81b1-4cf9-4108-bde9-e928239cff92" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CenterPiece.java" afterPath="$PROJECT_DIR$/src/CenterPiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CornerPiece.java" afterPath="$PROJECT_DIR$/src/CornerPiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EdgePiece.java" afterPath="$PROJECT_DIR$/src/EdgePiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Face.java" afterPath="$PROJECT_DIR$/src/Face.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Piece.java" afterPath="$PROJECT_DIR$/src/Piece.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CenterPieceTest.java" afterPath="$PROJECT_DIR$/src/CenterPieceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RubiksCube.java" afterPath="$PROJECT_DIR$/src/RubiksCube.java" />
     </list>
     <ignored path="rubicks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,9 +16,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rubicks$Main.coverage" NAME="Main Coverage Results" MODIFIED="1481144926564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/rubicks$CenterPieceTest_updateFacesIllegalState.coverage" NAME="CenterPieceTest.updateFacesIllegalState Coverage Results" MODIFIED="1481145002955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/rubicks$RubiksCubeTest.coverage" NAME="RubiksCubeTest Coverage Results" MODIFIED="1481145072878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/rubicks$Main.coverage" NAME="Main Coverage Results" MODIFIED="1481145215552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/rubicks$CenterPieceTest_updateFacesIllegalState.coverage" NAME="CenterPieceTest.updateFacesIllegalState Coverage Results" MODIFIED="1481145244823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/rubicks$RubiksCubeTest.coverage" NAME="RubiksCubeTest Coverage Results" MODIFIED="1481145233880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -46,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/CenterPieceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -62,18 +59,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RubiksCube.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RubiksCube.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="376" column="0" selection-start-line="376" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
+            <state relative-caret-position="112">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
+                <element signature="method#rotateFace#0;class#RubiksCube#0" expanded="false" />
                 <element signature="method#initializeCornerPieces#0;class#RubiksCube#0" expanded="false" />
                 <element signature="method#initializeEdgePieces#0;class#RubiksCube#0" expanded="false" />
                 <element signature="method#printLeftTopRight#0;class#RubiksCube#0" expanded="false" />
                 <element signature="method#printBottomFace#0;class#RubiksCube#0" expanded="false" />
                 <element signature="method#printBackFace#0;class#RubiksCube#0" expanded="false" />
                 <element signature="method#printFrontFace#0;class#RubiksCube#0" expanded="false" />
+                <element signature="method#orderIndices#0;class#RubiksCube#0" expanded="false" />
+                <element signature="method#rotateFace#1;class#RubiksCube#0" expanded="false" />
                 <element signature="method#getCubeCopy#0;class#RubiksCube#0" expanded="false" />
               </folding>
             </state>
@@ -93,8 +93,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            <state relative-caret-position="75">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,10 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Face.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Face.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Face.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="538">
               <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -140,8 +140,8 @@
       <file leaf-file-name="RubiksCubeTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RubiksCubeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="90">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,16 +175,16 @@
         <option value="$PROJECT_DIR$/src/Color.java" />
         <option value="$PROJECT_DIR$/src/Direction.java" />
         <option value="$PROJECT_DIR$/src/PieceTest.java" />
-        <option value="$PROJECT_DIR$/src/CenterPieceTest.java" />
         <option value="$PROJECT_DIR$/src/RubiksCubeTest.java" />
         <option value="$PROJECT_DIR$/Rubik's Design Document.txt" />
-        <option value="$PROJECT_DIR$/src/RubiksCube.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Face.java" />
         <option value="$PROJECT_DIR$/src/EdgePiece.java" />
         <option value="$PROJECT_DIR$/src/Piece.java" />
         <option value="$PROJECT_DIR$/src/CornerPiece.java" />
         <option value="$PROJECT_DIR$/src/CenterPiece.java" />
+        <option value="$PROJECT_DIR$/src/CenterPieceTest.java" />
+        <option value="$PROJECT_DIR$/src/RubiksCube.java" />
       </list>
     </option>
   </component>
@@ -280,7 +280,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RubiksCubeTest">
+  <component name="RunManager" selected="JUnit.CenterPieceTest.updateFacesIllegalState">
     <configuration default="false" name="RubiksCubeTest.rotateRightFaceForward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="rubick" />
@@ -633,8 +633,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RubiksCubeTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CenterPieceTest.updateFacesIllegalState" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CenterPieceTest.updateFacesIllegalState" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RubiksCubeTest" />
         <item index="2" class="java.lang.String" itemvalue="Application.Main" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.RubiksCubeTest.rotateRightFaceBackwards" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.RubiksCubeTest.rotateRightFaceForward" />
@@ -667,17 +667,17 @@
     <history-entry file="CenterPieceTest_updateFacesIllegalState - 2016.12.07 at 16h 10m 04s.xml">
       <configuration name="CenterPieceTest.updateFacesIllegalState" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CenterPieceTest_updateFacesIllegalState - 2016.12.07 at 16h 14m 06s.xml">
+      <configuration name="CenterPieceTest.updateFacesIllegalState" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="RubiksCubeTest - 2016.12.07 at 16h 11m 14s.xml">
       <configuration name="RubiksCubeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_rotateLeftFaceBackwards - 2016.12.01 at 10h 15m 04s.xml">
-      <configuration name="RubiksCubeTest.rotateLeftFaceBackwards" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest - 2016.12.07 at 16h 13m 27s.xml">
+      <configuration name="RubiksCubeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_rotateLeftFaceForward - 2016.12.01 at 10h 14m 17s.xml">
-      <configuration name="RubiksCubeTest.rotateLeftFaceForward" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_rotateRightFaceBackwards - 2016.12.01 at 10h 15m 45s.xml">
-      <configuration name="RubiksCubeTest.rotateRightFaceBackwards" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest - 2016.12.07 at 16h 13m 55s.xml">
+      <configuration name="RubiksCubeTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RubiksCubeTest_rotateRightFaceForward - 2016.12.01 at 10h 15m 42s.xml">
       <configuration name="RubiksCubeTest.rotateRightFaceForward" configurationId="JUnit" />
@@ -702,7 +702,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49436393" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27142859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976827" sideWeight="0.5056361" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5056361" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -733,7 +733,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -781,12 +781,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#rotateFace#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#initializeCornerPieces#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#initializeEdgePieces#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printLeftTopRight#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printBottomFace#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printBackFace#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printFrontFace#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#orderIndices#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#rotateFace#1;class#RubiksCube#0" expanded="false" />
             <element signature="method#getCubeCopy#0;class#RubiksCube#0" expanded="false" />
           </folding>
         </state>
@@ -900,12 +903,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#rotateFace#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#initializeCornerPieces#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#initializeEdgePieces#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printLeftTopRight#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printBottomFace#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printBackFace#0;class#RubiksCube#0" expanded="false" />
             <element signature="method#printFrontFace#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#orderIndices#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#rotateFace#1;class#RubiksCube#0" expanded="false" />
             <element signature="method#getCubeCopy#0;class#RubiksCube#0" expanded="false" />
           </folding>
         </state>
@@ -1027,46 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="376" column="0" selection-start-line="376" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
-          <folding>
-            <element signature="method#initializeCornerPieces#0;class#RubiksCube#0" expanded="false" />
-            <element signature="method#initializeEdgePieces#0;class#RubiksCube#0" expanded="false" />
-            <element signature="method#printLeftTopRight#0;class#RubiksCube#0" expanded="false" />
-            <element signature="method#printBottomFace#0;class#RubiksCube#0" expanded="false" />
-            <element signature="method#printBackFace#0;class#RubiksCube#0" expanded="false" />
-            <element signature="method#printFrontFace#0;class#RubiksCube#0" expanded="false" />
-            <element signature="method#getCubeCopy#0;class#RubiksCube#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CenterPieceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RubiksCubeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EdgePiece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -1104,12 +1070,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Face.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="538">
           <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#572#573#0" expanded="true" />
             <element signature="e#604#605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RubiksCubeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CenterPieceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="method#rotateFace#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#initializeCornerPieces#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#initializeEdgePieces#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#printLeftTopRight#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#printBottomFace#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#printBackFace#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#printFrontFace#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#orderIndices#0;class#RubiksCube#0" expanded="false" />
+            <element signature="method#rotateFace#1;class#RubiksCube#0" expanded="false" />
+            <element signature="method#getCubeCopy#0;class#RubiksCube#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -35,6 +35,17 @@ public class RubiksCube {
 
     }
 
+    public void rotateFace(Face face, Direction direction){
+        if(direction == Direction.FORWARD){
+            rotateFace(face);
+        }
+        else {
+            for (int i = 0; i < 3; i++) {
+                rotateFace(face);
+            }
+        }
+
+    }
 
     private void initializeCenterPieces(){
         cube[ONE][ONE][ZERO] = new CenterPiece(Color.RED, Face.FRONT);
@@ -366,24 +377,13 @@ public class RubiksCube {
                     Piece piece = cubeCopy[i][j][k];
 
                     cube[indices[0]][indices[1]][indices[2]] = piece;
-                    piece.updateFaces(true, face);
+                    piece.updateFaces(face);
 
                 }
             }
         }
     }
 
-    public void rotateFace(Face face, Direction direction){
-        if(direction == Direction.FORWARD){
-            rotateFace(face);
-        }
-        else {
-            for (int i = 0; i < 3; i++) {
-                rotateFace(face);
-            }
-        }
-
-    }
 
     public Piece[][][] getCubeCopy(){
         Piece[][][] cubeCopy = new Piece[3][3][3];

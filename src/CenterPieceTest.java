@@ -16,7 +16,7 @@ public class CenterPieceTest {
     }
     @Test(expected=IllegalStateException.class)
     public void updateFacesIllegalState() throws Exception {
-        center.updateFaces(true, Face.FRONT);
+        center.updateFaces(Face.FRONT);
     }
 
 }
