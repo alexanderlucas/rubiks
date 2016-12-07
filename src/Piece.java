@@ -4,7 +4,7 @@
  */
 public interface Piece {
 
-    public Color getColorForFace(Face face);
+    Color getColorForFace(Face face);
 
-    public void updateFaces(boolean forward, Face rotatedFace);
+    void updateFaces(boolean forward, Face rotatedFace);
 }

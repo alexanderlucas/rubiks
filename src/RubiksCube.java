@@ -26,7 +26,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public void showCube(){
+    public void toString(){
 
         printBottomFace();
         printBackFace();
