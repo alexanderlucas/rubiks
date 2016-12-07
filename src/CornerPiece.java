@@ -18,7 +18,7 @@ public class CornerPiece implements Piece {
     }
 
     @Override
-    public void updateFaces(boolean forward, Face rotatedFace) {
+    public void updateFaces(Face rotatedFace) {
         ArrayList<Face> affectedFaces = rotatedFace.getAffectedFaces();
 
         int size = affectedFaces.size();
@@ -26,16 +26,11 @@ public class CornerPiece implements Piece {
             Face face = faces.get(i);
             if(face != rotatedFace){
                 Face newFace;
-                if (forward){
+
                     int index = (affectedFaces.indexOf(face) + 1);
                     index = Math.floorMod(index, size);
                     newFace = affectedFaces.get(index);
-                }
-                else {
-                    int index = affectedFaces.indexOf(face) - 1;
-                    index = Math.floorMod(index, size);
-                    newFace = affectedFaces.get(index);
-                }
+
 
                 faces.set(i, newFace);
 

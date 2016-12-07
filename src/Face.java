@@ -54,11 +54,7 @@ public enum Face {
         }
         return affected;
     }
-
-    public int getSetIndex(){
-        return setIndex;
-    }
-
+    
     public int[] getIBounds(){
         if(faceClass == FaceClass.SIDE){
             return new int[]{setIndex, setIndex};

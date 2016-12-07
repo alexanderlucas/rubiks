@@ -20,7 +20,7 @@ public class CenterPiece implements Piece {
     }
 
     @Override
-    public void updateFaces(boolean forward, Face rotatedFace) {
+    public void updateFaces( Face rotatedFace) {
         if(rotatedFace != faces.get(0)){
             throw new IllegalStateException("Center pieces cannot changes faces");
         }
