@@ -26,7 +26,7 @@ public class RubiksCube {
         return cube;
     }
 
-    public void showCube(){
+    public void showCube(){ //because it prints
 
         printBottomFace();
         printBackFace();
@@ -295,26 +295,17 @@ public class RubiksCube {
 
     }
 
-    private void printPiece(Face face, Piece piece) {
-        //get color for the face of the piece
-        Color color = piece.getColorForFace(face);
-        //get the char of that color
-        char c = color.getCharacter();
-        //print that char
-        System.out.print(c + " ");
-    }
-
     private void printLeftTopRight(){
         for (int k = 2; k >= 0; k--) {
             for (int j = 2; j >= 0; j--) {
-                printPiece(Face.LEFT, cube[ZERO][j][k]);
+                cube[ZERO][j][k].printPiece(Face.LEFT);
 
             }
             for (int i = 0; i < 3; i++) {
-                printPiece(Face.TOP, cube[i][ZERO][k]);
+                cube[i][ZERO][k].printPiece(Face.TOP);
             }
             for (int j = 0; j < 3; j++) {
-                printPiece(Face.RIGHT, cube[TWO][j][k]);
+                cube[TWO][j][k].printPiece(Face.RIGHT);
 
             }
             System.out.println();
@@ -327,7 +318,7 @@ public class RubiksCube {
         for (int k = 0; k < 3; k++) {
             System.out.print("      ");
             for (int i = 0; i < 3; i++) {
-                printPiece(Face.BOTTOM, cube[i][j][k]);
+                cube[i][j][k].printPiece(Face.BOTTOM);
             }
             System.out.println();
         }
@@ -339,7 +330,7 @@ public class RubiksCube {
             System.out.print("      ");
 
             for (int i = 0; i < 3; i++) {
-                printPiece(Face.BACK, cube[i][j][k]);
+                cube[i][j][k].printPiece(Face.BACK);
             }
             System.out.println();
         }
@@ -351,7 +342,7 @@ public class RubiksCube {
             System.out.print("      ");
 
             for (int i = 0; i < 3; i++) {
-                printPiece(Face.FRONT, cube[i][j][k]);
+                cube[i][j][k].printPiece(Face.FRONT);
             }
             System.out.println();
         }

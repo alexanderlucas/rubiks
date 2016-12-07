@@ -7,4 +7,6 @@ public interface Piece {
     Color getColorForFace(Face face);
 
     void updateFaces(boolean forward, Face rotatedFace);
+
+    void printPiece(Face face);
 }
