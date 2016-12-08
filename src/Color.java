@@ -15,6 +15,12 @@ public enum Color {
         this.character = character;
     }
 
+    /**
+     * Returns the character of this Color
+     *
+     * @@return char that is the first letter of this color
+     **
+     */
     public char getCharacter() {
         return character;
     }

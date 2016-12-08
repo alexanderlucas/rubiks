@@ -26,10 +26,22 @@ public enum Face {
 
     }
 
+    /**
+     * Returns the FaceClass corresponds to this face
+     *
+     * @return FaceClass corresponding to the given face
+     *
+     */
     public FaceClass getFaceClass() {
         return faceClass;
     }
 
+    /**
+     * Returns the affected faces by a rotation of this face
+     *
+     * @return ArrayList of Faces that touch this face
+     *
+     */
     public ArrayList<Face> getAffectedFaces(){
         ArrayList<Face> affected = new ArrayList<>();
         switch(faceClass){
@@ -54,7 +66,16 @@ public enum Face {
         }
         return affected;
     }
-    
+
+    /**
+     * Returns the i bounds for this face
+     * If the face is a Side Face, then the i bounds should not change
+     * otherwise they should go as normal from 0 to 2
+     *
+     * @return an int[] the first element of which is the lower i bound and
+     * the second element of which is the upper i bound
+     *
+     */
     public int[] getIBounds(){
         if(faceClass == FaceClass.SIDE){
             return new int[]{setIndex, setIndex};
@@ -63,6 +84,15 @@ public enum Face {
             return new int[]{0, 2};
         }
     }
+    /**
+     * Returns the j bounds for this face
+     * If the face is a Cap Face, then the j bounds should not change
+     * otherwise they should go as normal from 0 to 2
+     *
+     * @return an int[] the first element of which is the lower j bound and
+     * the second element of which is the upper j bound
+     *
+     */
     public int[] getJBounds(){
         if(faceClass == FaceClass.CAP){
             return new int[]{setIndex, setIndex};
@@ -71,6 +101,15 @@ public enum Face {
             return new int[]{0, 2};
         }
     }
+    /**
+     * Returns the k bounds for this face
+     * If the face is a Vertical Face, then the k bounds should not change
+     * otherwise they should go as normal from 0 to 2
+     *
+     * @return an int[] the first element of which is the lower k bound and
+     * the second element of which is the upper k bound
+     *
+     */
     public int[] getKBounds(){
         if(faceClass == FaceClass.VERTICAL){
             return new int[]{setIndex, setIndex};
