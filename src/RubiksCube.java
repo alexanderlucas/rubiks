@@ -147,7 +147,6 @@ public class RubiksCube {
             int k =(odd%3);
 
             if(odd != 13){
-                System.out.println(i+""+j+""+k);
                 ArrayList<Color> colors = getColors(i, j, k);
                 ArrayList<Face> faces = getFaces(i, j, k);
                 cube[i][j][k] = new EdgePiece(colors, faces);
