@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87be81b1-4cf9-4108-bde9-e928239cff92" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CenterPiece.java" afterPath="$PROJECT_DIR$/src/CenterPiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Color.java" afterPath="$PROJECT_DIR$/src/Color.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CornerPiece.java" afterPath="$PROJECT_DIR$/src/CornerPiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EdgePiece.java" afterPath="$PROJECT_DIR$/src/EdgePiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Face.java" afterPath="$PROJECT_DIR$/src/Face.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Piece.java" afterPath="$PROJECT_DIR$/src/Piece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RubiksCube.java" afterPath="$PROJECT_DIR$/src/RubiksCube.java" />
-    </list>
+    <list default="true" id="87be81b1-4cf9-4108-bde9-e928239cff92" name="Default" comment="" />
     <ignored path="rubicks.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
